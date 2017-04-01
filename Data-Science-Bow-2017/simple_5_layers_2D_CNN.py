@@ -11,8 +11,8 @@ from keras.layers.core import Dense, Dropout, Flatten
 from keras.layers.convolutional import Convolution2D, MaxPooling2D, ZeroPadding2D
 from keras.optimizers import SGD
 from keras.callbacks import EarlyStopping
-np.random.seed(2016)
-random.seed(2016)
+np.random.seed(2048)
+random.seed(2048)
 
 conf = dict()
 
