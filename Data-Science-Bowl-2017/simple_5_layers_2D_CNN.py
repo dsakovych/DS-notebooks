@@ -76,7 +76,7 @@ def batch_generator_train(files, train_csv_table, batch_size):
             counter = 0
 
 
-def get_custom_CNN():
+def build_CNN():
     model = Sequential()
     model.add(ZeroPadding2D((1, 1), input_shape=(1, conf['image_shape'][0], conf['image_shape'][1]), dim_ordering='th'))
     model.add(Convolution2D(conf['level_1_filters'], 3, 3, activation='relu', dim_ordering='th'))
@@ -139,7 +139,7 @@ def create_single_model():
     print('Test patients: {}'.format(len(test_patients)))
 
     print('Create and compile model...')
-    model = get_custom_CNN()
+    model = build_CNN()
     callbacks = [EarlyStopping(monitor='val_loss', patience=conf['patience'], verbose=0),]
 
     get_dir = 'stage1'
